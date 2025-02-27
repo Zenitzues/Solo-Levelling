@@ -73,6 +73,9 @@
         <div class="div-attribute">
             <p>Adamantine Spine: <span id="adamantineSpine">0</span> <button onclick="incrementAttribute('adamantineSpine')">+</button> <button onclick="decrementAttribute('adamantineSpine')">-</button></p>
         </div>
+        <div class="div-attribute">
+            <p>Steel Abs: <span id="steelAbs">0</span> <button onclick="incrementAttribute('steelAbs')">+</button> <button onclick="decrementAttribute('steelAbs')">-</button></p>
+        </div>
     </div>
 
     <h2>Limit Breaker</h2>
@@ -81,6 +84,9 @@
     </div>
     <div class="div-attribute">
         <p>Fluid Motion: <span id="fluidMotion">0</span> <button onclick="incrementAttribute('fluidMotion')">+</button> <button onclick="decrementAttribute('fluidMotion')">-</button></p>
+    </div>
+    <div class="div-attribute">
+        <p>The Living Flame: <span id="livingFlame">0</span> <button onclick="incrementAttribute('livingFlame')">+</button> <button onclick="decrementAttribute('livingFlame')">-</button></p>
     </div>
 
     <h2>Mental Attributes: Mental Fortitude</h2>
@@ -105,8 +111,10 @@
             ironcladArms: parseInt(localStorage.getItem('ironcladArms')) || 0,
             lightningLegs: parseInt(localStorage.getItem('lightningLegs')) || 0,
             adamantineSpine: parseInt(localStorage.getItem('adamantineSpine')) || 0,
+            steelAbs: parseInt(localStorage.getItem('adamantineSpine')) || 0,
             unwaveringSpirit: parseInt(localStorage.getItem('unwaveringSpirit')) || 0,
             fluidMotion: parseInt(localStorage.getItem('fluidMotion')) || 0,
+            livingFlame: parseInt(localStorage.getItem('livingFlame')) || 0,
             impactAmplifier: parseInt(localStorage.getItem('impactAmplifier')) || 0,
             knowledgeAbsorption: parseInt(localStorage.getItem('knowledgeAbsorption')) || 0,
             wisdomSeeker: parseInt(localStorage.getItem('wisdomSeeker')) || 0,
