@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solo Leveling: Engineer Edition</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        .div-attribute{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .div-attribute span{
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Solo Leveling: Engineer Edition</h1>
+
+    <h2>Physical Attributes</h2>
+    <div id="physicalAttributes">
+        <div class="div-attribute">
+            <p>Upper Body: <span id="upperBodyStrength">0</span> <button onclick="incrementAttribute('upperBodyStrength')">+</button> <button onclick="decrementAttribute('upperBodyStrength')">-</button></p>
+        </div>
+        <div class="div-attribute">
+            <p>Lower Body: <span id="lowerBodyStrength">0</span> <button onclick="incrementAttribute('lowerBodyStrength')">+</button> <button onclick="decrementAttribute('lowerBodyStrength')">-</button></p>
+        </div>
+    </div>
+
+    <h2>Mental Attributes</h2>
+    <div id="mentalAttributes">
+        <div class="div-attribute">
+            <p>Code Quality: <span id="codeQuality">0</span> <button onclick="incrementAttribute('codeQuality')">+</button> <button onclick="decrementAttribute('codeQuality')">-</button></p>
+        </div>
+        <div class="div-attribute">
+            <p>Task Completion: <span id="taskCompletion">0</span> <button onclick="incrementAttribute('taskCompletion')">+</button> <button onclick="decrementAttribute('taskCompletion')">-</button></p>
+        </div>
+    </div>
+
+    <script>
+        let attributes = {
+            upperBodyStrength: parseInt(localStorage.getItem('upperBodyStrength')) || 0,
+            lowerBodyStrength: parseInt(localStorage.getItem('lowerBodyStrength')) || 0,
+            codeQuality: parseInt(localStorage.getItem('codeQuality')) || 0,
+            taskCompletion: parseInt(localStorage.getItem('taskCompletion')) || 0,
+        };
+
+        function incrementAttribute(attributeName) {
+            attributes[attributeName]++;
+            updateDisplay();
+            saveData();
+        }
+
+        function decrementAttribute(attributeName) {
+            attributes[attributeName]--;
+            updateDisplay();
+            saveData();
+        }
+
+        function updateDisplay() {
+            for (let attribute in attributes) {
+                document.getElementById(attribute).textContent = attributes[attribute];
+            }
+        }
+
+        function saveData() {
+            for (let attribute in attributes) {
+                localStorage.setItem(attribute, attributes[attribute]);
+            }
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>
