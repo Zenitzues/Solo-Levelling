@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Solo Leveling</title>
+    <title>Solo Leveling </title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap');
-    
     body {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Roboto', sans-serif; /* Choose your preferred font */
         margin: 20px;
-        background: url('solo.jpg') no-repeat center center fixed;
-        background-size: auto;
-        color: #e0e0e0;
-        text-shadow: 0px 0px 3px #000;
+        background-image: url('solo.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-color: #1a1a1a; /* Example: Dark gray background */
+        /* Updated text color for a more vibrant feel */
+        color: #e0f0ff; /* Light blue with a subtle glow */ 
+        text-shadow: 0px 0px 3px #000; /* Keep the text shadow */
     }
     
     h1, h2 {
-        font-family: 'Cinzel', serif;
-        color: #FFD700;
-        text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.8);
+        margin-bottom: 10px;
+        /* Updated heading color for a more powerful look */
+        color: #fffacd; /* Light golden color */
+        font-weight: bold;
+        letter-spacing: 1px;
+        background: linear-gradient(to right, #fffacd, #ffd700); /* Gold gradient */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     
     .div-attribute {
         display: flex;
         align-items: center;
         margin-bottom: 10px;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.2);
     }
     
     .div-attribute span {
         margin: 0px 10px;
-        font-weight: bold;
+        font-weight: bold; /* Make attribute values bolder */
     }
     
     button {
-        background: linear-gradient(to bottom, #8A2BE2, #4B0082);
-        color: white;
+        background-color: #333;
+        color: #fff;
         border: none;
-        border-radius: 8px;
-        padding: 8px 12px;
+        padding: 5px 10px;
         cursor: pointer;
-        font-weight: bold;
-        transition: background 0.3s, transform 0.2s;
-    }
-    
-    button:hover {
-        background: #B22222;
-        transform: scale(1.1);
+        font-weight: bold; /* Make button text bolder */
     }
     </style>
 </head>
 <body>
-    <h1>Solo Leveling</h1>
-    
+    <h1>Solo Leveling </h1>
+
     <h2>Physical Attributes</h2>
     <div id="physicalAttributes">
         <div class="div-attribute">
@@ -66,61 +63,65 @@
         <div class="div-attribute">
             <p>Adamantine Spine: <span id="adamantineSpine">0</span> <button onclick="incrementAttribute('adamantineSpine')">+</button> <button onclick="decrementAttribute('adamantineSpine')">-</button></p>
         </div>
+        <h2>Limit Breaker</h2>
+        <div class="div-attribute">
+            <p>Unwavering Spirit: <span id="unwaveringSpirit">0</span> <button onclick="incrementAttribute('unwaveringSpirit')">+</button> <button onclick="decrementAttribute('unwaveringSpirit')">-</button></p>
+        </div>
+        <div class="div-attribute">
+            <p>Fluid Motion: <span id="fluidMotion">0</span> <button onclick="incrementAttribute('fluidMotion')">+</button> <button onclick="decrementAttribute('fluidMotion')">-</button></p>
+        </div>
     </div>
-    
-    <h2>Limit Breaker</h2>
-    <div class="div-attribute">
-        <p>Unwavering Spirit: <span id="unwaveringSpirit">0</span> <button onclick="incrementAttribute('unwaveringSpirit')">+</button> <button onclick="decrementAttribute('unwaveringSpirit')">-</button></p>
-    </div>
-    <div class="div-attribute">
-        <p>Fluid Motion: <span id="fluidMotion">0</span> <button onclick="incrementAttribute('fluidMotion')">+</button> <button onclick="decrementAttribute('fluidMotion')">-</button></p>
-    </div>
-    
+
     <h2>Mental Attributes: Mental Fortitude</h2>
-    <h2>Code Mastery</h2>
-    <div class="div-attribute">
-        <p>Impact Amplifier: <span id="impactAmplifier">0</span> <button onclick="incrementAttribute('impactAmplifier')">+</button> <button onclick="decrementAttribute('impactAmplifier')">-</button></p>
+    <div id="mentalAttributes">
+        <h2>Code Mastery</h2>
+        <div class="div-attribute">
+            <p>Impact Amplifier: <span id="impactAmplifier">0</span> <button onclick="incrementAttribute('impactAmplifier')">+</button> <button onclick="decrementAttribute('impactAmplifier')">-</button></p>
+        </div>
+        <div class="div-attribute">
+            <p>Knowledge Absorption: <span id="knowledgeAbsorption">0</span> <button onclick="incrementAttribute('knowledgeAbsorption')">+</button> <button onclick="decrementAttribute('knowledgeAbsorption')">-</button></p>
+        </div>
+        <h2>Inner Evolution</h2>
+        <div class="div-attribute">
+            <p>Wisdom Seeker: <span id="wisdomSeeker">0</span> <button onclick="incrementAttribute('wisdomSeeker')">+</button> <button onclick="decrementAttribute('wisdomSeeker')">-</button></p>
+        </div>
+        <div class="div-attribute">
+            <p>Mental Fortress: <span id="mentalFortress">0</span> <button onclick="incrementAttribute('mentalFortress')">+</button> <button onclick="decrementAttribute('mentalFortress')">-</button></p>
+        </div>
     </div>
-    <div class="div-attribute">
-        <p>Knowledge Absorption: <span id="knowledgeAbsorption">0</span> <button onclick="incrementAttribute('knowledgeAbsorption')">+</button> <button onclick="decrementAttribute('knowledgeAbsorption')">-</button></p>
-    </div>
-    
-    <h2>Inner Evolution</h2>
-    <div class="div-attribute">
-        <p>Wisdom Seeker: <span id="wisdomSeeker">0</span> <button onclick="incrementAttribute('wisdomSeeker')">+</button> <button onclick="decrementAttribute('wisdomSeeker')">-</button></p>
-    </div>
-    <div class="div-attribute">
-        <p>Mental Fortress: <span id="mentalFortress">0</span> <button onclick="incrementAttribute('mentalFortress')">+</button> <button onclick="decrementAttribute('mentalFortress')">-</button></p>
-    </div>
-    
+
     <script>
         let attributes = {
-            ironcladArms: 0,
-            lightningLegs: 0,
-            adamantineSpine: 0,
-            unwaveringSpirit: 0,
-            fluidMotion: 0,
-            impactAmplifier: 0,
-            knowledgeAbsorption: 0,
-            wisdomSeeker: 0,
-            mentalFortress: 0
+            upperBodyStrength: parseInt(localStorage.getItem('upperBodyStrength')) || 0,
+            lowerBodyStrength: parseInt(localStorage.getItem('lowerBodyStrength')) || 0,
+            codeQuality: parseInt(localStorage.getItem('codeQuality')) || 0,
+            taskCompletion: parseInt(localStorage.getItem('taskCompletion')) || 0,
         };
-        
+
         function incrementAttribute(attributeName) {
             attributes[attributeName]++;
             updateDisplay();
+            saveData();
         }
-        
+
         function decrementAttribute(attributeName) {
-            if (attributes[attributeName] > 0) attributes[attributeName]--;
+            attributes[attributeName]--;
             updateDisplay();
+            saveData();
         }
-        
+
         function updateDisplay() {
             for (let attribute in attributes) {
                 document.getElementById(attribute).textContent = attributes[attribute];
             }
         }
+
+        function saveData() {
+            for (let attribute in attributes) {
+                localStorage.setItem(attribute, attributes[attribute]);
+            }
+        }
+
         updateDisplay();
     </script>
 </body>
