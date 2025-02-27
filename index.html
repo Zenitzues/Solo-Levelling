@@ -52,7 +52,7 @@
 <body>
     <h1>Solo Leveling </h1>
 
-    <h2>Physical Attributes</h2>
+    <h2>Physical Attributes: Body Enhancement</h2>
     <div id="physicalAttributes">
         <div class="div-attribute">
             <p>Ironclad Arms: <span id="ironcladArms">0</span> <button onclick="incrementAttribute('ironcladArms')">+</button> <button onclick="decrementAttribute('ironcladArms')">-</button></p>
@@ -92,10 +92,15 @@
 
     <script>
         let attributes = {
-            upperBodyStrength: parseInt(localStorage.getItem('upperBodyStrength')) || 0,
-            lowerBodyStrength: parseInt(localStorage.getItem('lowerBodyStrength')) || 0,
-            codeQuality: parseInt(localStorage.getItem('codeQuality')) || 0,
-            taskCompletion: parseInt(localStorage.getItem('taskCompletion')) || 0,
+            ironcladArms: parseInt(localStorage.getItem('ironcladArms')) || 0,
+            lightningLegs: parseInt(localStorage.getItem('lightningLegs')) || 0,
+            adamantineSpine: parseInt(localStorage.getItem('adamantineSpine')) || 0,
+            unwaveringSpirit: parseInt(localStorage.getItem('unwaveringSpirit')) || 0,
+            fluidMotion: parseInt(localStorage.getItem('fluidMotion')) || 0,
+            impactAmplifier: parseInt(localStorage.getItem('impactAmplifier')) || 0,
+            knowledgeAbsorption: parseInt(localStorage.getItem('knowledgeAbsorption')) || 0,
+            wisdomSeeker: parseInt(localStorage.getItem('wisdomSeeker')) || 0,
+            mentalFortress: parseInt(localStorage.getItem('mentalFortress')) || 0,
         };
 
         function incrementAttribute(attributeName) {
