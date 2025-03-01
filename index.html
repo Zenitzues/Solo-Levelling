@@ -95,14 +95,31 @@
             background: #B22222;
             transform: scale(1.1);
         }
+
+        #enableSound {
+            background: linear-gradient(to bottom, #008000, #006400); /* Green gradient for sound button */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        #enableSound:hover {
+            background: #00FF00; /* Lighter green on hover */
+            transform: scale(1.05); /* Slight scale-up on hover */
+        }
     </style>
 </head>
 <body>
     <div id="main">
         <div id="video-container">
-            <video autoplay loop src="solovid.mp4"></video>
+            <video autoplay loop muted id="bgVideo" src="solovid.mp4"></video>
             <div id="content-overlay">
                 <h1>Solo Leveling</h1>
+                 <button id="enableSound">Enable Sound</button>
 
                 <h2>Physical Attributes: Body Enhancement</h2>
                 <div id="physicalAttributes">
@@ -191,6 +208,15 @@
         }
 
         updateDisplay();
+
+        // JavaScript for enabling sound
+        const video = document.getElementById('bgVideo');
+        const enableSoundButton = document.getElementById('enableSound');
+
+        enableSoundButton.addEventListener('click', () => {
+            video.muted = false; // Unmute the video
+            enableSoundButton.style.display = 'none'; // Hide the button after click
+        });
     </script>
 </body>
 </html>
