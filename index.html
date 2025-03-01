@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="./Assets/dagger.png">
@@ -13,6 +15,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -20,12 +23,13 @@
             color: #e0e0e0;
             text-shadow: 0px 0px 3px #000;
             overflow: hidden;
+            height: 100vh; /* Ensure body takes full height */
         }
 
         #main {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: 100%; /* Ensure main takes full height */
         }
 
         #video-container {
@@ -55,13 +59,19 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            /* New: Add a background to the overlay */
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            backdrop-filter: blur(10px); /* Optional: Add blur effect */
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             font-family: 'Cinzel', serif;
             color: #FFD700;
             text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.8);
             margin-bottom: 20px;
+            position: relative; /* Ensure stacking context */
+            z-index: 10;
         }
 
         .div-attribute {
@@ -73,11 +83,15 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.2);
+            position: relative; /* Ensure stacking context */
+            z-index: 10;
         }
 
         .div-attribute span {
             margin: 0px 10px;
             font-weight: bold;
+            position: relative; /* Ensure stacking context */
+            z-index: 10;
         }
 
         button {
@@ -89,6 +103,8 @@
             cursor: pointer;
             font-weight: bold;
             transition: background 0.3s, transform 0.2s;
+            position: relative; /* Ensure stacking context */
+            z-index: 10;
         }
 
         button:hover {
@@ -97,56 +113,76 @@
         }
     </style>
 </head>
+
 <body>
     <div id="main">
         <div id="video-container">
             <video autoplay muted loop src="solovid.mp4"></video>
-            <div id="content-overlay">
-                <h1>Solo Leveling</h1>
+        </div>
+        <div id="content-overlay">
+            <h1>Solo Leveling</h1>
 
-                <h2>Physical Attributes: Body Enhancement</h2>
-                <div id="physicalAttributes">
-                    <div class="div-attribute">
-                        <p>Ironclad Arms: <span id="ironcladArms">0</span> <button onclick="incrementAttribute('ironcladArms')">+</button> <button onclick="decrementAttribute('ironcladArms')">-</button></p>
-                    </div>
-                    <div class="div-attribute">
-                        <p>Lightning Legs: <span id="lightningLegs">0</span> <button onclick="incrementAttribute('lightningLegs')">+</button> <button onclick="decrementAttribute('lightningLegs')">-</button></p>
-                    </div>
-                    <div class="div-attribute">
-                        <p>Adamantine Spine: <span id="adamantineSpine">0</span> <button onclick="incrementAttribute('adamantineSpine')">+</button> <button onclick="decrementAttribute('adamantineSpine')">-</button></p>
-                    </div>
-                    <div class="div-attribute">
-                        <p>Steel Abs: <span id="steelAbs">0</span> <button onclick="incrementAttribute('steelAbs')">+</button> <button onclick="decrementAttribute('steelAbs')">-</button></p>
-                    </div>
+            <h2>Physical Attributes: Body Enhancement</h2>
+            <div id="physicalAttributes">
+                <div class="div-attribute">
+                    <p>Ironclad Arms: <span id="ironcladArms">0</span> <button onclick="incrementAttribute('ironcladArms')">+</button>
+                        <button onclick="decrementAttribute('ironcladArms')">-</button></p>
                 </div>
+                <div class="div-attribute">
+                    <p>Lightning Legs: <span id="lightningLegs">0</span> <button
+                            onclick="incrementAttribute('lightningLegs')">+</button> <button
+                            onclick="decrementAttribute('lightningLegs')">-</button></p>
+                </div>
+                <div class="div-attribute">
+                    <p>Adamantine Spine: <span id="adamantineSpine">0</span> <button
+                            onclick="incrementAttribute('adamantineSpine')">+</button> <button
+                            onclick="decrementAttribute('adamantineSpine')">-</button></p>
+                </div>
+                <div class="div-attribute">
+                    <p>Steel Abs: <span id="steelAbs">0</span> <button onclick="incrementAttribute('steelAbs')">+</button>
+                        <button onclick="decrementAttribute('steelAbs')">-</button></p>
+                </div>
+            </div>
 
-                <h2>Limit Breaker</h2>
-                <div class="div-attribute">
-                    <p>Unwavering Spirit: <span id="unwaveringSpirit">0</span> <button onclick="incrementAttribute('unwaveringSpirit')">+</button> <button onclick="decrementAttribute('unwaveringSpirit')">-</button></p>
-                </div>
-                <div class="div-attribute">
-                    <p>Fluid Motion: <span id="fluidMotion">0</span> <button onclick="incrementAttribute('fluidMotion')">+</button> <button onclick="decrementAttribute('fluidMotion')">-</button></p>
-                </div>
-                <div class="div-attribute">
-                    <p>The Living Flame: <span id="livingFlame">0</span> <button onclick="incrementAttribute('livingFlame')">+</button> <button onclick="decrementAttribute('livingFlame')">-</button></p>
-                </div>
+            <h2>Limit Breaker</h2>
+            <div class="div-attribute">
+                <p>Unwavering Spirit: <span id="unwaveringSpirit">0</span> <button
+                        onclick="incrementAttribute('unwaveringSpirit')">+</button> <button
+                        onclick="decrementAttribute('unwaveringSpirit')">-</button></p>
+            </div>
+            <div class="div-attribute">
+                <p>Fluid Motion: <span id="fluidMotion">0</span> <button onclick="incrementAttribute('fluidMotion')">+</button>
+                    <button onclick="decrementAttribute('fluidMotion')">-</button></p>
+            </div>
+            <div class="div-attribute">
+                <p>The Living Flame: <span id="livingFlame">0</span> <button
+                        onclick="incrementAttribute('livingFlame')">+</button> <button
+                        onclick="decrementAttribute('livingFlame')">-</button></p>
+            </div>
 
-                <h2>Mental Attributes: Mental Fortitude</h2>
-                <h2>Google MP</h2>
-                <div class="div-attribute">
-                    <p>Impact Amplifier: <span id="impactAmplifier">0</span> <button onclick="incrementAttribute('impactAmplifier')">+</button> <button onclick="decrementAttribute('impactAmplifier')">-</button></p>
-                </div>
-                <div class="div-attribute">
-                    <p>Knowledge Absorption: <span id="knowledgeAbsorption">0</span> <button onclick="incrementAttribute('knowledgeAbsorption')">+</button> <button onclick="decrementAttribute('knowledgeAbsorption')">-</button></p>
-                </div>
+            <h2>Mental Attributes: Mental Fortitude</h2>
+            <h2>Google MP</h2>
+            <div class="div-attribute">
+                <p>Impact Amplifier: <span id="impactAmplifier">0</span> <button
+                        onclick="incrementAttribute('impactAmplifier')">+</button> <button
+                        onclick="decrementAttribute('impactAmplifier')">-</button></p>
+            </div>
+            <div class="div-attribute">
+                <p>Knowledge Absorption: <span id="knowledgeAbsorption">0</span> <button
+                        onclick="incrementAttribute('knowledgeAbsorption')">+</button> <button
+                        onclick="decrementAttribute('knowledgeAbsorption')">-</button></p>
+            </div>
 
-                <h2>Inner Evolution</h2>
-                <div class="div-attribute">
-                    <p>Wisdom Seeker: <span id="wisdomSeeker">0</span> <button onclick="incrementAttribute('wisdomSeeker')">+</button> <button onclick="decrementAttribute('wisdomSeeker')">-</button></p>
-                </div>
-                <div class="div-attribute">
-                    <p>Mental Fortress: <span id="mentalFortress">0</span> <button onclick="incrementAttribute('mentalFortress')">+</button> <button onclick="decrementAttribute('mentalFortress')">-</button></p>
-                </div>
+            <h2>Inner Evolution</h2>
+            <div class="div-attribute">
+                <p>Wisdom Seeker: <span id="wisdomSeeker">0</span> <button
+                        onclick="incrementAttribute('wisdomSeeker')">+</button> <button
+                        onclick="decrementAttribute('wisdomSeeker')">-</button></p>
+            </div>
+            <div class="div-attribute">
+                <p>Mental Fortress: <span id="mentalFortress">0</span> <button
+                        onclick="incrementAttribute('mentalFortress')">+</button> <button
+                        onclick="decrementAttribute('mentalFortress')">-</button></p>
             </div>
         </div>
     </div>
@@ -193,4 +229,5 @@
         updateDisplay();
     </script>
 </body>
+
 </html>
